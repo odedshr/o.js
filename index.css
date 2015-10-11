@@ -1,0 +1,138 @@
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 0.8rem;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h3, h4 {
+    font-weight: bold;
+}
+h3 { font-size: 0.8rem; }
+h4 {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+ol[type="i"] {
+    counter-reset: note;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+ol[type="i"] li:before {
+    counter-increment: note;
+    content: "(" counter(note, lower-roman) ") ";
+}
+ol[type="i"] li:last-child:before{
+    content: "and (" counter(note, lower-roman) ") ";
+}
+ol[type="i"] li {
+    display: inline;
+}
+ol[type="i"] li:not(:last-child):after{
+    content: ";";
+}
+ol[type="i"] li:last-child:after{
+    content: ".";
+}
+
+pre {
+    background-color: rgba(0,0,0,0.05);
+    border: 0.1rem solid rgba(0,0,0,0.07);
+    border-radius: 0.2rem;
+    display: inline;
+    font-family: monospace;
+    margin: 0;
+    padding: 0.25rem;
+}
+
+footer:before, footer:after {
+    content: " ~ ";
+}
+footer {
+    color: #ddd;
+    font-size: 0.75rem;
+    text-align: center;
+    letter-spacing: 0.25rem;
+}
+.sidebar {
+    background: #fff;
+    bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    min-height: 100%;
+    width: 15rem;
+}
+.navLink {
+    color: #666;
+    display: block;
+}
+.navLink .parameters {
+    display: none;
+}
+.navLink-h1 {
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+}
+.navLink-h1 .version { font-size: 0.7rem; }
+.navLink-h1 .version:before { content: "("; }
+.navLink-h1 .version:after { content: ")"; }
+.navLink-h2 {
+    font-size: 0.85rem;
+    margin: 1rem 0 0.2rem 0.25rem;
+}
+.navLink-h3 {
+    font-size: 0.8rem;
+    margin: 0 0 0.1rem 1rem;
+}
+.navLink-h3:before {
+    content: "- ";
+    text-decoration: none;
+}
+.navLink-h4 {
+    font-size: 0.75rem;
+    margin: 0 0 0.05rem 1.5rem;
+}
+.navLink-h4:before {
+    content: "- ";
+    text-decoration: none;
+}
+.page-header {
+    font-style: italic;
+    text-align: center;
+}
+.page-header-title {
+    font-size: 3rem;
+    margin: 1rem 0 0 0;
+}
+.page-header-title .version {
+    font-size: 0.9rem;
+}
+.page-header-subtitle {
+    font-size: 0.9rem;
+}
+.content {
+    box-sizing: border-box;
+    padding: 0 15.5rem;
+    width: 100%;
+}
+.unit-tests {
+    width: 100%;
+}
+.downloads, .methods, .samples, .parameters {
+    list-style: none;
+    margin: 0;
+}
+.parameters h4 {
+    display: inline;
+}
+.sample {
+    margin-bottom: 1rem;
+}
