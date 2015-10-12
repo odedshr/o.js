@@ -247,7 +247,12 @@
         /*(function testLoadLanguage () {
             var done = assert.async();
             〇.EVT.subscribe('TPL.languageLoaded',function (evt) {
+                clearTimeout(onTimeOut);
                 assert.equal (evt.detail[0],'de-de', 'Language loaded from external file');
+                done();
+            });
+            var onTimeOut = setTimeout(function failedToLoad() {
+                assert.ok (false, 'failed to load language from file');
                 done();
             });
             〇.TPL.loadLanguage('de-de.json');
@@ -256,7 +261,12 @@
         /*(function testLoadTemplate () {
             var done = assert.async();
             〇.EVT.subscribe('TPL.loaded',function (evt) {
+                clearTimeout(onTimeOut);
                 assert.ok (evt.detail.indexOf('loadedTemplate') > -1, 'Template loaded from external file');
+                done();
+            });
+            var onTimeOut = setTimeout(function failedToLoad() {
+                assert.ok (false, 'failed to load template from file');
                 done();
             });
             〇.TPL.load('o.templates.html');

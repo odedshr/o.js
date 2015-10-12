@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>〇 - A Lightweight Framework</title>
     <script type="application/javascript" src="o.min.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.19.0.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body class="body">
@@ -21,6 +20,7 @@
             <div>
                 〇 was written with three things in mind -
                 <ol type="i">
+                <ol type="i">
                     <li>Learning by experience, which I encourage anyone to do</li>
                     <li>Having a framework doing exactly what I need, and I know how it's being done</li>
                     <li>finally, having a framework's design as I believe it should</li>
@@ -32,7 +32,9 @@
             </p><p>
                 I tried to be compatible with <a href="https://github.com/airbnb/javascript" target="_blank" title="Read the code styling guide">AirBNB code styling guide</a> as I agree most notes will result with better, more readable code that is less likely to contain bugs.
             </p><p>
-                When possible, methods will return the called object in order to allow chaining, for example: <pre>〇.CSS.add(〇.ELM.myButton,'green').add(〇.ELM.button2,'red')</pre>
+                When possible, methods will return the called object in order to allow chaining, for example: <code>〇.CSS.add(〇.ELM.myButton,'green').add(〇.ELM.button2,'red')</code>
+            </p><p>
+                Although the official name is <a href="https://en.wiktionary.org/wiki/%E3%80%87" target="_blank" title="Read about the symbol '〇'">〇</a> (It's zero, I pronounce it as "O"), which doesn't normally appear on keyboards, so to make life easier, you may want to use the unofficial name "O" (as in the 15<sup>th</sup> character in the English alphabet), for example <code>O.ELM.button.onclick();</code>.
             </p>
         </section>
         <section>
@@ -53,22 +55,22 @@
             <ul class="methods">
                 <li>
                     <h4>subscribe<span class="parameters">(sEventName,fHandler)</span></h4>
-                    <pre>〇.EVT.subscribe("anEvent",foo)</pre>
+                    <code>〇.EVT.subscribe("anEvent",foo)</code>
                     <div>Whenever <i>anEvent</i> is dispatched, the function <i>foo</i> will be called with event as an input.</div>
                 </li>
                 <li>
                     <h4>unsubscribe<span class="parameters">(sEventName,fHandler)</span></h4>
-                    <pre>〇.EVT.unsubscribe("anEvent",foo)</pre>
+                    <code>〇.EVT.unsubscribe("anEvent",foo)</code>
                     <div>Stop calling <i>foo</i> when <i>anEvent</i> is dispatched.</div>
                 </li>
                 <li>
                     <h4>dispatch<span class="parameters">(sEventName)</span></h4>
-                    <pre>〇.EVT.dispatch("anEvent")</pre>
+                    <code>〇.EVT.dispatch("anEvent")</code>
                     <div>Calls an event.</div>
                 </li>
                 <li>
                     <h4>getDispatcher<span class="parameters">(sEventName[, fHandler])</span></h4>
-                    <pre>dButton.onclick = 〇.EVT.getDispatcher("anEvent")</pre>
+                    <code>dButton.onclick = 〇.EVT.getDispatcher("anEvent")</code>
                     <div>Returns a function that when triggered, will dispatch an event. if <i>fHandler</i> is provided, it will be subscribed to the event.</div>
                 </li>
             </ul>
@@ -82,37 +84,37 @@
             <ul class="methods">
                 <li>
                     <h4>create<span class="parameters">(sTag,oAttribtues,sInnerText)</span></h4>
-                    <pre>〇.DOM.create('a',{href:'#top'},'back to top')</pre>
+                    <code>〇.DOM.create('a',{href:'#top'},'back to top')</code>
                     <div>Return a DOM element with the provided attributes.</div>
                 </li>
                 <li>
                     <h4>parse<span class="parameters">(sHTML)</span></h4>
-                    <pre>〇.DOM.parse('&lt;a href="#top"&gt;back to top&lt;/a&gt;')</pre>
+                    <code>〇.DOM.parse('&lt;a href="#top"&gt;back to top&lt;/a&gt;')</code>
                     <div>Converts the provided string to a DOM element.</div>
                 </li>
                 <li>
                     <h4>insertBefore<span class="parameters">(dElement,dNewElement)</span></h4>
-                    <pre>〇.DOM.insertBefore(〇.ELM.homeLink,contactLink)</pre>
+                    <code>〇.DOM.insertBefore(〇.ELM.homeLink,contactLink)</code>
                     <div>Inserts a new DOM element before a given as a <i>sibling</i>.</div>
                 </li>
                 <li>
                     <h4>insertAfter<span class="parameters">(dElement,dNewElement)</span></h4>
-                    <pre>〇.DOM.insertAfter(〇.ELM.homeLink,contactLink)</pre>
+                    <code>〇.DOM.insertAfter(〇.ELM.homeLink,contactLink)</code>
                     <div>Inserts a new DOM element after a given as a <i>sibling</i>.</div>
                 </li>
                 <li>
                     <h4>prepend<span class="parameters">(dElement,dNewElement)</span></h4>
-                    <pre>〇.DOM.prepend(〇.ELM.menu,contactLink)</pre>
+                    <code>〇.DOM.prepend(〇.ELM.menu,contactLink)</code>
                     <div>Inserts a new DOM element to another DOM element as its <i>first child</i>.</div>
                 </li>
                 <li>
                     <h4>append<span class="parameters">(dElement,dNewElement)</span></h4>
-                    <pre>〇.DOM.append(〇.ELM.menu,contactLink)</pre>
+                    <code>〇.DOM.append(〇.ELM.menu,contactLink)</code>
                     <div>Inserts a new DOM element to another DOM element as its <i>last child</i>.</div>
                 </li>
                 <li>
                     <h4>remove<span class="parameters">(dElement)</span></h4>
-                    <pre>〇.DOM.remove(〇.ELM.homeLink)</pre>
+                    <code>〇.DOM.remove(〇.ELM.homeLink)</code>
                     <div>Removes a DOM element.</div>
                 </li>
             </ul>
@@ -126,43 +128,43 @@
             <ul class="methods">
                 <li>
                     <h4>refresh<span class="parameters">()</span></h4>
-                    <pre>〇.ELM.refresh</pre>
+                    <code>〇.ELM.refresh</code>
                     <div>Updates the DOM elements list.</div>
                 </li>
                 <li>
                     <h4>observe<span class="parameters">(isEnabled)</span></h4>
-                    <pre>〇.ELM.observe(true)</pre>
+                    <code>〇.ELM.observe(true)</code>
                     <div><i>Observe</i> is an event-listening to changes in the DOM which automatically refreshes the <i>〇.ELM</i> list. As it might influence performance, it is possible to disable and enable it.</div>
                 </li>
                 <li>
                     <h4>per<span class="parameters">()</span></h4>
-                    <pre>var elements = 〇.ELM.per('.button');</pre>
+                    <code>var elements = 〇.ELM.per('.button');</code>
                     <div><i>Per</i> returns a list of elements that corresponds to a provided query.
                         Additionally, this returned list has the following methods:
                         <ul class="methods">
                             <li>
                                 <h4>each<span class="parameters">(fPerItem)</span></h4>
-                                <pre>〇.ELM.per('.user').each(function (dElement) {...});</pre>
+                                <code>〇.ELM.per('.user').each(function (dElement) {...});</code>
                                 <div>Iterates the DOM elements using a forEach function.</div>
                             </li>
                             <li>
                                 <h4>remove<span class="parameters">()</span></h4>
-                                <pre>〇.ELM.per('.user').remove();</pre>
+                                <code>〇.ELM.per('.user').remove();</code>
                                 <div>Removes all the DOM elements in the list from the page.</div>
                             </li>
                             <li>
                                 <h4>html<span class="parameters">(sNewInnerHTML)</span></h4>
-                                <pre>〇.ELM.per('.js-version').html(〇.VER.framework);</pre>
+                                <code>〇.ELM.per('.js-version').html(〇.VER.framework);</code>
                                 <div>updates all DOM elements' innerHTML.</div>
                             </li>
                             <li>
                                 <h4>useAsTemplate<span class="parameters">()</span></h4>
-                                <pre>〇.ELM.per('.user').useAsTemplate();</pre>
+                                <code>〇.ELM.per('.user').useAsTemplate();</code>
                                 <div>Subscribes the DOM elements as templates. They do not have to be classes as '<i>js-template</i>' but they must have an '<i>ID</i>'.</div>
                             </li>
                             <li>
                                 <h4>css.add<span class="parameters">('sClassName')</span>/remove<span class="parameters">('sClassName')</span>/toggle<span class="parameters">('sClassName')</span></h4>
-                                <pre>〇.ELM.per('.user').css.add('hidden');</pre>
+                                <code>〇.ELM.per('.user').css.add('hidden');</code>
                                 <div>manipulates the DOM element's CSS classes.</div>
                             </li>
                         </ul>
@@ -180,23 +182,23 @@
             <ul class="methods">
                 <li>
                     <h4>has<span class="parameters">(dElement,sClassName)</span></h4>
-                    <pre>if (〇.CSS.has(〇.ELM.button,'enabled')) {}</pre>
+                    <code>if (〇.CSS.has(〇.ELM.button,'enabled')) {}</code>
                     <div>Returns true when a given DOM element has a class.</div>
                 </li><li>
                     <h4>add<span class="parameters">(dElement,sClassName)</span></h4>
-                    <pre>〇.CSS.add(〇.ELM.button,'enabled');</pre>
+                    <code>〇.CSS.add(〇.ELM.button,'enabled');</code>
                     <div>Adds the class to the DOM element</div>
                 </li><li>
                     <h4>remove<span class="parameters">(dElement,sClassName)</span></h4>
-                    <pre>〇.CSS.remove(〇.ELM.button,'enabled');</pre>
+                    <code>〇.CSS.remove(〇.ELM.button,'enabled');</code>
                     <div>Removes a class from the DOM element</div>
                 </li><li>
                     <h4>toggle<span class="parameters">(dElement,sClassName)</span></h4>
-                    <pre>〇.CSS.toggle(〇.ELM.button,'enabled');</pre>
+                    <code>〇.CSS.toggle(〇.ELM.button,'enabled');</code>
                     <div>Toggle a class (i.e. if element already has it, it be removed, otherwise it will be added)</div>
                 </li><li>
                     <h4>isJsPrefix<span class="parameters">(isJsPrefixAdded)</span></h4>
-                    <pre>〇.CSS.isJsPrefix(true);</pre>
+                    <code>〇.CSS.isJsPrefix(true);</code>
                     <div>Sets whether the prefix <i>js-</i> should be added to any className handled by <i>〇.CSS</i>. Default is <i>true</i>. If no value was provided, the function will only return the current state.</div>
                 </li>
             </ul>
@@ -219,26 +221,26 @@
             <ul class="methods">
                 <li>
                     <h4>get<span class="parameters">(sURL[, oOptions], fCallback)</span></h4>
-                    <pre>〇.AJAX.get('/catalog', 〇.getDispatcher('catalogLoaded') );</pre>
+                    <code>〇.AJAX.get('/catalog', 〇.getDispatcher('catalogLoaded') );</code>
                     <div>Uses AJAX request to retrieve the content of <i>sURL</i> and sends it to <i>fCallback</i></div>
                 </li><li>
                     <h4>post<span class="parameters">(sURL,oData[, oOptions], fCallback)</span></h4>
-                    <pre>〇.AJAX.post('/catalog/item/13953',{price:485.3}, 〇.getDispatcher('itemUpdated'));</pre>
+                    <code>〇.AJAX.post('/catalog/item/13953',{price:485.3}, 〇.getDispatcher('itemUpdated'));</code>
                     <div>Sends <i>oData</i> to <i>sURL</i> via POST and its response to <i>fCallback</i></div>
                 </li><li>
                     <h4>put<span class="parameters">(sURL,oData[, oOptions], fCallback)</span></h4>
-                    <pre>〇.AJAX.put('/catalog/new',{name:'Red Pen',price:485.3}, 〇.getDispatcher('itemAdded'));</pre>
+                    <code>〇.AJAX.put('/catalog/new',{name:'Red Pen',price:485.3}, 〇.getDispatcher('itemAdded'));</code>
                     <div>
                         Sends <i>oData</i> to <i>sURL</i> via PUT and its response to <i>fCallback</i>.
                         <i>PUT</i> is used to send a complete object, while <i>POST</i> is used to send partial information, usually for update purposes.
                     </div>
                 </li><li>
                     <h4>delete<span class="parameters">(sURL[, oOptions], fCallback)</span></h4>
-                    <pre>〇.AJAX.get('/catalog/item/13953', 〇.getDispatcher('itemRemoved') );</pre>
+                    <code>〇.AJAX.get('/catalog/item/13953', 〇.getDispatcher('itemRemoved') );</code>
                     <div>Sends DELETE command to <i>sURL</i> and its response to <i>fCallback</i></div>
                 </li><li>
                     <h4>setDefaults</h4>
-                    <pre>〇.AJAX.setDefaults(oSettings);</pre>
+                    <code>〇.AJAX.setDefaults(oSettings);</code>
                     <div>Sets AJAX defaults parameters, such as:
                         <ol type="i">
                             <li>credentials (boolean, default is <i>false</i>)</li>
@@ -269,44 +271,44 @@
             <ul class="samples">
                 <li>
                     <h4>Simple example: Hello World!</h4>
-                    <div>Rendering the template <pre>Hello {{name}}</pre> with the data <pre>{name:'World'}</pre> will result the string <pre>Hello World</pre>.</div>
+                    <div>Rendering the template <code>Hello {{name}}</code> with the data <code>{name:'World'}</code> will result the string <code>Hello World</code>.</div>
                 </li><li>
                     <h4>When data is an object</h4>
-                    <div>Data may contain an object, for example <pre>{user:{name:'World'}}</pre>, in which case the template should specify <pre>Hello {{user.name}}</pre>.</div>
+                    <div>Data may contain an object, for example <code>{user:{name:'World'}}</code>, in which case the template should specify <code>Hello {{user.name}}</code>.</div>
                 </li><li>
                     <h4>When data is a function</h4>
-                    <div>Data may contain a function, for example <pre>{name: function () { return 'world'}}</pre>, but this will be automatically identified, so the template will remain <pre>Hello {{name}}</pre>.</div>
+                    <div>Data may contain a function, for example <code>{name: function () { return 'world'}}</code>, but this will be automatically identified, so the template will remain <code>Hello {{name}}</code>.</div>
                 </li><li>
                     <h4>Conditionals</h4>
-                    <div>Conditionals allow hiding some of the template according to a variable. for example: <pre>Hello {{?showName}}{{name}}{{/showName}}</pre> where <i>showName</i> can either be a <i>boolean</i> or a function returning a <i>boolean</i>. <pre>Hello {{?!showName}}no name provided{{/showName}}</pre> will show <i>'no name provided'</i> ONLY if show equals false.</div>
+                    <div>Conditionals allow hiding some of the template according to a variable. for example: <code>Hello {{?showName}}{{name}}{{/showName}}</code> where <i>showName</i> can either be a <i>boolean</i> or a function returning a <i>boolean</i>. <code>Hello {{?!showName}}no name provided{{/showName}}</code> will show <i>'no name provided'</i> ONLY if show equals false.</div>
                 </li><li>
                     <h4>Shortcut to Object's sub-variables in the data</h4>
-                    <div>When data contain an object, it is possible to easily access Object's properties using '@', for example: <pre>{{@user}}{{fName}} {{lName}}{{/user}}</pre> is equal to <pre>{{user.fName}} {{user.lName}}</pre>.</div>
+                    <div>When data contain an object, it is possible to easily access Object's properties using '@', for example: <code>{{@user}}{{fName}} {{lName}}{{/user}}</code> is equal to <code>{{user.fName}} {{user.lName}}</code>.</div>
                 </li><li>
                     <h4>Iterating arrays in the data</h4>
                     <div>
-                        It is possible to iterate arrays in the data using the loop <i>{{item@group}}</i>, for example: <pre>{{user@users}} {{name}} {{/user@users}}</pre>. Note this means the data should look like <pre>{users:{user:[{name:'John'},{name:'David'}]}}</pre>.
-                        You may define a counter by appending to the prefix tag '<i>:</i>' and the name of the new variable, for example: <pre>{{item@group:_idx}} {{_idx}} {{/item@group}}</pre>. Please note the counter doesn't appear at the closing tag.
+                        It is possible to iterate arrays in the data using the loop <i>{{item@group}}</i>, for example: <code>{{user@users}} {{name}} {{/user@users}}</code>. Note this means the data should look like <code>{users:{user:[{name:'John'},{name:'David'}]}}</code>.
+                        You may define a counter by appending to the prefix tag '<i>:</i>' and the name of the new variable, for example: <code>{{item@group:_idx}} {{_idx}} {{/item@group}}</code>. Please note the counter doesn't appear at the closing tag.
                     </div>
                 </li><li>
                     <h4>Sub-templates</h4>
-                    <div>A template may refer to another template using the syntax <i>data:template</i>, for example <pre>{{user:userTemplate}}</pre>. In our example, the <i>user</i> will be sent as data for the <i>userTemplate</i>.</div>
+                    <div>A template may refer to another template using the syntax <i>data:template</i>, for example <code>{{user:userTemplate}}</code>. In our example, the <i>user</i> will be sent as data for the <i>userTemplate</i>.</div>
                 </li><li>
                     <h4>using 'this'</h4>
-                    <div>Sometime you might want to retrieve the entire data. This can be done using '<i>.</i>'. For example, when our data contains an array of strings - <pre>{fruits:{fruit:['orange','apple','melon']}}</pre> you may print the list using the iteration command <pre>{{fruit@fruits}} {{.}}, {{/fruit@fruits}}</pre></div>
+                    <div>Sometime you might want to retrieve the entire data. This can be done using '<i>.</i>'. For example, when our data contains an array of strings - <code>{fruits:{fruit:['orange','apple','melon']}}</code> you may print the list using the iteration command <code>{{fruit@fruits}} {{.}}, {{/fruit@fruits}}</code></div>
                 </li><li>
                     <h4>Updating delimiters</h4>
-                    <div>If you template contains the string '<i>{{</i>' (or '<i>}}</i>') you might want to temporarily replace the delimiters. You can do so with the <i>'{{'startTag','endTag'}} ... '{{/'startTag','endTag'}}</i>, for example  <pre>{{'&lt;?','?&gt;'}}Hello &lt;?name?&gt;{{/'&lt;?','?&gt;'}}</pre></div>
+                    <div>If you template contains the string '<i>{{</i>' (or '<i>}}</i>') you might want to temporarily replace the delimiters. You can do so with the <i>'{{'startTag','endTag'}} ... '{{/'startTag','endTag'}}</i>, for example  <code>{{'&lt;?','?&gt;'}}Hello &lt;?name?&gt;{{/'&lt;?','?&gt;'}}</code></div>
                 </li><li>
                     <h4>Translation</h4>
-                    <div>It is advised that strings shouldn't be hard-coded in your structure, rather the variables that can be translates. This can easily be done using <i>'#string.code'</i>, for example <pre>{{#label.hello}}}</pre>.
+                    <div>It is advised that strings shouldn't be hard-coded in your structure, rather the variables that can be translates. This can easily be done using <i>'#string.code'</i>, for example <code>{{#label.hello}}}</code>.
                         The string code is comprised with two elements, separated by a '<i>.</i>': context and default-value. The context is meant to help you know where and how the string is used; default-value  is the string that appear in case the current locale doesn't contain the string-code.
                         It is worth to emphasize that the translation files include the full string code (in our example <i>label.hello</i>). The default value begins after the first '<i>.</i>' and may contain any character (including spaces).
                     </div>
                 </li>
                 <li>
                     <h4>Order of rendering</h4>
-                    <div>Let's look at this sample-data <pre>{{main:{isVisible:true,sub:{isVisible:false}}}}</pre> and the template <pre>{{@sub}}{{?isVisible}}Hello!{{/isVisible}}{{/sub}}</pre> the variable that will be checked is <i>sub.isVisible</i> (and not <i>main.isVisible</i>).
+                    <div>Let's look at this sample-data <code>{{main:{isVisible:true,sub:{isVisible:false}}}}</code> and the template <code>{{@sub}}{{?isVisible}}Hello!{{/isVisible}}{{/sub}}</code> the variable that will be checked is <i>sub.isVisible</i> (and not <i>main.isVisible</i>).
                         This means the order or parsing the template is crucial. It follows this logic -
                         <ol type="i">
                             <li>Replace delimiters where needed</li>
@@ -323,50 +325,50 @@
             <ul class="methods">
                 <li>
                     <h4>load<span class="parameters">(sURL)</span></h4>
-                    <pre>〇.TPL.load('myTemplates.html');</pre>
+                    <code>〇.TPL.load('myTemplates.html');</code>
                     <div>
                         <i>Load</i> read an <i>text/html</i> online document and then reads and subscribes all the templates it contains. Once loaded, a 'TPL.templatesLoaded' event will be dispatched, where its detail is the current <i>list</i> of templates.
                     </div>
                 </li><li>
                     <h4>use<span class="parameters">(domElement)</span></h4>
-                    <pre>〇.TPL.load(〇.ELM.myNewTemplate);</pre>
+                    <code>〇.TPL.load(〇.ELM.myNewTemplate);</code>
                     <div>
                         <i>Use</i> read a single element and subscribe its ID to the template list for later use.
                     </div>
                 </li><li>
                     <h4>loadLanguage<span class="parameters">(sURL)</span></h4>
-                    <pre>〇.TPL.loadLanguage('/i18n/en-us.json');</pre>
+                    <code>〇.TPL.loadLanguage('/i18n/en-us.json');</code>
                     <div>
                         <i>LoadLanguage</i> read an <i>application/json</i> online document and then append its content to the strings object.
-                        The expected json content is <pre>{'localeName':{'str.code1':'translation1','str.code2':'translation2'}}</pre>. for example - <pre>{'en-us':{'label.hello':'hello}}</pre>
+                        The expected json content is <code>{'localeName':{'str.code1':'translation1','str.code2':'translation2'}}</code>. for example - <code>{'en-us':{'label.hello':'hello}}</code>
                     </div>
                 </li><li>
                     <h4>appendToLanguage<span class="parameters">(sLocale,oDictionary)</span></h4>
-                    <pre>〇.TPL.appendToLanguage('en-us',{'label.hello':'Hello','button.cancel':'Cancel'});</pre>
+                    <code>〇.TPL.appendToLanguage('en-us',{'label.hello':'Hello','button.cancel':'Cancel'});</code>
                     <div>
                         <i>AppendToLanguage</i> appends a dictionary (set of key-values) to a given locale.
                     </div>
                 </li><li>
                     <h4>translate<span class="parameters">(sStringCode)</span></h4>
-                    <pre>〇.TPL.translate('button.signup');</pre>
+                    <code>〇.TPL.translate('button.signup');</code>
                     <div>
                         <i>Translate</i> returns the translation from the current locale's dictionary. If the string-code doesn't not appear in the dictionary, the <i>default-value</i> will be returned.
                     </div>
                 </li><li>
                     <h4>getLocale<span class="parameters">()</span></h4>
-                    <pre>〇.TPL.getLocale();</pre>
+                    <code>〇.TPL.getLocale();</code>
                     <div>
                         <i>GetLocale</i> returns the current locale.
                     </div>
                 </li><li>
                     <h4>list<span class="parameters">()</span></h4>
-                    <pre>〇.TPL.list();</pre>
+                    <code>〇.TPL.list();</code>
                     <div>
                         <i>List</i> return an array of all subscribed templates.
                     </div>
                 </li><li>
                     <h4>render<span class="parameters">(oData)</span></h4>
-                    <pre>〇.TPL.render({'linkTemplate':{label:'{{#link.Sign Up}}',href='/signup'}});</pre>
+                    <code>〇.TPL.render({'linkTemplate':{label:'{{#link.Sign Up}}',href='/signup'}});</code>
                     <div>
                         <i>Render</i> returns the HTML output of processing a provided template with given data. It receives a single data object, who single key is the name of the template to be used and its value is the data object that will be used per that template.
                     </div>
@@ -379,7 +381,7 @@
             <ul class="methods">
                 <li>
                     <h4>framework</h4>
-                    <pre>var version = 〇.VER.framework;</pre>
+                    <code>var version = 〇.VER.framework;</code>
                     <div>Return the current version of the framework</div>
                 </li>
             </ul>

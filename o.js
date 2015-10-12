@@ -1,5 +1,5 @@
-〇=(function(){
-    this.VER = { framework: '0.1.0' };
+〇=O=(function(){
+    this.VER = { framework: '0.1.1' };
     this.EVT = (function EVT() {
         var iEVT = {},
             oldOnLoad = window.onload ? window.onload : false,
@@ -434,4 +434,4 @@
         }).bind(this));
         return iTPL;
     }).call(this);
-    return this;}).call((typeof 〇 != "undefined")?〇:{});
+    return this;}).call((typeof O != "undefined")?O:{});
