@@ -230,7 +230,7 @@
     });
     QUnit.module( '〇.TPL' );
     QUnit.test( 'Rendering HTML using templates', function( assert ) {
-        〇.TPL.load('o.templates.html');
+        〇.TPL.load('/tests/o.templates.html');
         assert.equal( 〇.TPL.render({'helloWorldTemplate':{name:'World'}}),' <div>Hello World</div>', 'Render a simple helloWorld' );
         assert.equal( 〇.TPL.render({'nestedDataTemplate':{user:{name:'John',age:27}}}),' <div>User:John<br/>Age:27</div>', 'Render nested data' );
         assert.equal( 〇.TPL.render({'arrayTemplate':{users:{user:[{name:'John'},{name:'Peter'}]}}}),' <ul><li>0 John</li><li>1 Peter</li></ul>', 'Render data array' );
