@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>〇 - A Lightweight Framework</title>
-    <script type="application/javascript" src="lib/o.min.js"></script>
+    <script type="application/javascript" src="lib/o.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="body">
@@ -398,16 +398,17 @@
         </section>
         <footer>end of file</footer>
     </article>
-    <script type="text/html" id="headerTemplate" class="js-template"> <a name='{{anchor}}'>{{title}}</a></script>
-    <script type="text/html" id="navLinkTemplate" class="js-template"> <a href='#{{anchor}}' class="navLink navLink-{{className}}">{{title}}</a></script>
-    <script type="text/html" id="translatedWorldTemplate" class="js-template"> <div>{{#label.Hello}} {{name}}</div></script>
-    <script type="text/html" id="helloWorldTemplate" class="js-template"> <div>Hello {{name}}</div></script>
-    <script type="text/html" id="changeTagsTemplate" class="js-template"> <div>{{'<?','?>'}}Hello <?name?>{{/'<?','?>'}} {{name}}</div></script>
-    <script type="text/html" id="nestedDataTemplate" class="js-template"> <div>User:{{user.name}}<br/>Age:{{user.age}}</div></script>
-    <script type="text/html" id="arrayTemplate" class="js-template"> <ul>{{user@users:_idx}}<li>{{_idx}} {{name}}</li>{{/user@users}}</ul></script>
-    <script type="text/html" id="templateWithSubTemplate" class="js-template"> <div>includes helloWorld: {{user:helloWorldTemplate}}</div></script>
-    <script type="text/html" id="ifTemplate" class="js-template"> <div>{{?isShown}}Shown!{{/isShown}}{{?!isShown}}Invisible{{/isShown}}</div></script>
-    <script type="text/html" id="innerDataTemplate" class="js-template"> <div>User:{{@user}}name = {{name}} {{/user}}<br/>{{@user.age}} Age = {{.}} {{/user.age}}</div></script>
+    <script type="text/html" data-template="headerTemplate" class="js-template"> <a name='{{anchor}}'>{{title}}</a></script>
+    <script type="text/html" data-template="navLinkTemplate" class="js-template"> <a href='#{{anchor}}' class="navLink navLink-{{className}}">{{title}}</a></script>
+    <script type="text/html" data-template="translatedWorldTemplate" class="js-template"> <div>{{#label.Hello}} {{name}}</div></script>
+    <script type="text/html" data-template="helloWorldTemplate" class="js-template"> <div>Hello {{name}}</div></script>
+    <script type="text/html" data-template="attributeChangeTemplate" class="js-template"> <div {{?isGreen}}style="color:green;"{{/isGreen}}>Hello World</div></script>
+    <script type="text/html" data-template="changeTagsTemplate" class="js-template"> <div>{{'<?','?>'}}Hello <?name?>{{/'<?','?>'}} {{name}}</div></script>
+    <script type="text/html" data-template="nestedDataTemplate" class="js-template"> <div>User:{{user.name}}<br/>Age:{{user.age}}</div></script>
+    <script type="text/html" data-template="arrayTemplate" class="js-template"> <ul>{{user@users:_idx}}<li>{{_idx}} {{name}}</li>{{/user@users}}</ul></script>
+    <script type="text/html" data-template="templateWithSubTemplate" class="js-template"> <div>includes helloWorld: {{user:helloWorldTemplate}}</div></script>
+    <script type="text/html" data-template="ifTemplate" class="js-template"> <div>{{?isShown}}Shown!{{/isShown}}{{?!isShown}}Invisible{{/isShown}}</div></script>
+    <script type="text/html" data-template="innerDataTemplate" class="js-template"> <div>User:{{@user}}name = {{name}} {{/user}}<br/>{{@user.age}} Age = {{.}} {{/user.age}}</div></script>
     <script type="text/html" class="js-template">
         <div>Hello world</div>
     </script>

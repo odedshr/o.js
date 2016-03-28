@@ -100,10 +100,10 @@
             〇.ELM.observe(false);
             〇.DOM.append(document.body, getElement('disableObserver'));
             window.setTimeout(function afterAdding() {
-                assert.ok( 〇.ELM['disableObserver'] !== document.getElementById('disableObserver'), 'Added DOM element but ELM list not updated when observer disconnected' );
+                assert.ok( 〇.ELM.disableObserver !== document.getElementById('disableObserver'), 'Added DOM element but ELM list not updated when observer disconnected' );
                 〇.ELM.observe(true);
-                assert.equal( 〇.ELM['disableObserver'], document.getElementById('disableObserver'), 'ELM list updated after observer re-enabled' );
-                〇.DOM.remove(〇.ELM['disableObserver']);
+                assert.equal( 〇.ELM.disableObserver, document.getElementById('disableObserver'), 'ELM list updated after observer re-enabled' );
+                〇.DOM.remove(〇.ELM.disableObserver);
                 running = false;
                 done();
                 testMultiElementManipulation();
@@ -142,10 +142,10 @@
             running = 'addAndRemoveAElement';
             〇.DOM.append(document.body, getElement('addAndRemoveAElement'));
             window.setTimeout(function afterAdding() {
-                assert.equal( 〇.ELM['addAndRemoveAElement'], document.getElementById('addAndRemoveAElement'), "Added DOM element found" );
-                〇.DOM.remove(〇.ELM['addAndRemoveAElement']);
+                assert.equal( 〇.ELM.addAndRemoveAElement, document.getElementById('addAndRemoveAElement'), "Added DOM element found" );
+                〇.DOM.remove(〇.ELM.addAndRemoveAElement);
                 window.setTimeout ( function afterRemoving() {
-                    assert.equal( typeof 〇.ELM['addAndRemoveAElement'], 'undefined', "Removed DOM element" );
+                    assert.equal( typeof 〇.ELM.addAndRemoveAElement, 'undefined', "Removed DOM element" );
                     running = false;
                     done();
                     testDisableObserver();
@@ -243,6 +243,8 @@
         〇.TPL.setLocale(false);
         assert.equal( 〇.TPL.render({'translatedWorldTemplate':{name:'World'}}),' <div>Hello World</div>', 'SetLocale to default and render HelloWorld' );
         assert.equal( 〇.TPL.render({'changeTagsTemplate':{name:'World'}}),' <div>Hello World World</div>', 'Update delimiters' );
+        assert.equal( 〇.TPL.render({'attributeChangeTemplate':{isGreen:true}}),' <div style="color:green;">Hello World</div>', 'Update delimiters' );
+
         // testLoadTemplate is disabled due to bug in chrome (apparently)
         /*(function testLoadLanguage () {
             var done = assert.async();
