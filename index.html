@@ -290,6 +290,10 @@
                         It is possible to iterate arrays in the data using the loop <i>{{item@group}}</i>, for example: <code>{{user@users}} {{name}} {{/user@users}}</code>. Note this means the data should look like <code>{users:{user:[{name:'John'},{name:'David'}]}}</code>.
                         You may define a counter by appending to the prefix tag '<i>:</i>' and the name of the new variable, for example: <code>{{item@group:_idx}} {{_idx}} {{/item@group}}</code>. Please note the counter doesn't appear at the closing tag.
                     </div>
+                    <div>
+                        However, if your data is a straightforward array, like this - <code>{users:[{name:'John'},{name:'David'}]}</code>, the loop will run on its original scope, and the iterator variable will be in the variable provided (in our case - user).
+                        In such case, the template would be <code>{{user@users:_idx}} {{_idx}}. {{user.name}} {{/user@users}}</code>.
+                    </div>
                 </li><li>
                     <h4>Sub-templates</h4>
                     <div>A template may refer to another template using the syntax <i>data:template</i>, for example <code>{{user:userTemplate}}</code>. In our example, the <i>user</i> will be sent as data for the <i>userTemplate</i>.</div>
@@ -406,7 +410,8 @@
     <script type="text/html" data-template="changeTagsTemplate" class="js-template"> <div>{{'<?','?>'}}Hello <?name?>{{/'<?','?>'}} {{name}}</div></script>
     <script type="text/html" data-template="nestedDataTemplate" class="js-template"> <div>User:{{user.name}}<br/>Age:{{user.age}}</div></script>
     <script type="text/html" data-template="arrayTemplate" class="js-template"> <ul>{{user@users:_idx}}<li>{{_idx}} {{name}}</li>{{/user@users}}</ul></script>
-    <script type="text/html" data-template="templateWithSubTemplate" class="js-template"> <div>includes helloWorld: {{user:helloWorldTemplate}}</div></script>
+    <script type="text/html" data-template="array2Template" class="js-template"> <ul>{{user@users:_idx}}<li>{{_idx}} {{user.name}}</li>{{/user@users}}</ul></script>
+    <script type="text/html" data-template="templateWithSubTemplate" class="js-template"> <div>includes helloWorld: {{user:'helloWorldTemplate'}}</div></script>
     <script type="text/html" data-template="ifTemplate" class="js-template"> <div>{{?isShown}}Shown!{{/isShown}}{{?!isShown}}Invisible{{/isShown}}</div></script>
     <script type="text/html" data-template="innerDataTemplate" class="js-template"> <div>User:{{@user}}name = {{name}} {{/user}}<br/>{{@user.age}} Age = {{.}} {{/user.age}}</div></script>
     <script type="text/html" class="js-template">

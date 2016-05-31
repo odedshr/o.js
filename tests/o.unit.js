@@ -234,8 +234,9 @@
         assert.equal( 〇.TPL.render({'helloWorldTemplate':{name:'World'}}),' <div>Hello World</div>', 'Render a simple helloWorld' );
         assert.equal( 〇.TPL.render({'nestedDataTemplate':{user:{name:'John',age:27}}}),' <div>User:John<br/>Age:27</div>', 'Render nested data' );
         assert.equal( 〇.TPL.render({'arrayTemplate':{users:{user:[{name:'John'},{name:'Peter'}]}}}),' <ul><li>0 John</li><li>1 Peter</li></ul>', 'Render data array' );
+        assert.equal( 〇.TPL.render({'array2Template':{users:[{name:'John'},{name:'Peter'}]}}),' <ul><li>0 John</li><li>1 Peter</li></ul>', 'Render data array with new format' );
         assert.equal( 〇.TPL.render({'helloWorldTemplate':{name:function(){return 'Function';}}}),' <div>Hello Function</div>', 'Render a template using function' );
-        assert.equal( 〇.TPL.render({'templateWithSubTemplate':{user:{name:'World'}}}), ' <div>includes helloWorld:  <div>Hello name</div></div>', 'render sub-template' );
+        assert.equal( 〇.TPL.render({'templateWithSubTemplate':{user:{name:'World'}}}), ' <div>includes helloWorld:  <div>Hello World</div></div>', 'render sub-template' );
         assert.equal( 〇.TPL.render({'ifTemplate':{isShown:true}}),' <div>Shown!</div>', 'Render template with conditional' );
         assert.equal( 〇.TPL.render({'innerDataTemplate':{user:{name:'John',age:27}}}),' <div>User:name = John <br/> Age = 27 </div>', 'Render nested data' );
         〇.TPL.appendToLanguage('es_sp',{'label.Hello':'Hola!'}).setLocale('es_sp');
