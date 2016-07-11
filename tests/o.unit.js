@@ -238,6 +238,7 @@
         assert.equal( 〇.TPL.render({'helloWorldTemplate':{name:function(){return 'Function';}}}),' <div>Hello Function</div>', 'Render a template using function' );
         assert.equal( 〇.TPL.render({'templateWithSubTemplate':{user:{name:'World'}}}), ' <div>includes helloWorld:  <div>Hello World</div></div>', 'render sub-template' );
         assert.equal( 〇.TPL.render({'ifTemplate':{isShown:true}}),' <div>Shown!</div>', 'Render template with conditional' );
+        console.log(〇.TPL.render({'innerDataTemplate':{user:{name:'John',age:27}}}));
         assert.equal( 〇.TPL.render({'innerDataTemplate':{user:{name:'John',age:27}}}),' <div>User:name = John <br/> Age = 27 </div>', 'Render nested data' );
         〇.TPL.appendToLanguage('es_sp',{'label.Hello':'Hola!'}).setLocale('es_sp');
         assert.equal( 〇.TPL.render({'translatedWorldTemplate':{name:'World'}}),' <div>Hola! World</div>', 'Add word to language-strings, setLocale and render HelloWorld' );

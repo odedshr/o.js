@@ -1,5 +1,7 @@
 〇=(function(){
+    〇.enableDeprecatedFunction();
     this.EVT.subscribe('window.onload',(function refreshAndStartObserver() {
+        〇.ELM.per('script.js-template[data-template]').useAsTemplate();
         〇.ELM.per('.js-version').html(this.VER.framework);
         var count = 1;
         this.ELM.per('h1,h2,h3,h4').each((function perHeader(dElm) {
